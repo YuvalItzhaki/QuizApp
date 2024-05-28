@@ -2,6 +2,7 @@
   import q from "./data/data.json"
   import {ref, watch} from "vue"
   import Card from "./components/Card.vue"
+  import {RouterView} from "vue-router"
 
   const quizes = ref(q)
   const search = ref('')
@@ -20,6 +21,7 @@
     </header>
     <div class="options-container">
         <Card v-for="quiz in quizes" :key="quiz.id" :quiz="quiz"/>
+        <RouterView/>
       
       <!-- <div v-for="quiz in quizes" :key="quiz.id" class="card">
         <img :src="quiz.img" alt="">
